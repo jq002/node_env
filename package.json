@@ -1,0 +1,25 @@
+{
+  "name": "node-env",
+  "version": "1.0.0",
+  "description": "about NODE_ENV",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:p":"webpack -p",
+    "build:prod":"webpack --config webpack.config.prod.js",
+    "build:cross-env":"cross-env NODE_ENV=production TEST_ENV=production  webpack",
+    "build:dev":"webpack --optimize-minimize --define process.env.NODE_ENV='development'",
+    "build:test":"webpack --optimize-minimize --define process.env.TEST_ENV='development' --define process.env.NODE_ENV='development'"
+  },
+  "author": "jq",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.4"
+  }
+}
